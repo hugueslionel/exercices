@@ -30,3 +30,21 @@
     margin: 0 2px;
     display: inline-block;
 }
+.interactive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.interactive-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.interactive-table td:hover {
+    background-color: #f0f0f0;
+}
+
