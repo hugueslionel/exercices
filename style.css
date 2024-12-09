@@ -1,34 +1,32 @@
-.exercice {
-    margin: 20px 0;
-    padding: 10px;
+.tableau table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tableau td {
     border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-}
-
-.exercice p {
-    margin: 5px 0;
-}
-
-.exercice input {
-    padding: 5px;
-    margin-right: 10px;
-}
-
-.exercice button {
-    padding: 5px 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
     cursor: pointer;
 }
 
-.exercice button:hover {
-    background-color: #0056b3;
+.tableau td:hover {
+    background-color: #f0f0f0;
 }
 
-.resultat {
-    margin-top: 10px;
-    font-weight: bold;
+.objets .case,
+.formes .case {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 50px;
+}
+
+.objets .case span {
+    margin: 0 2px;
+    display: inline-block;
 }
