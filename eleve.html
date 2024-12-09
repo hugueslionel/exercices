@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,13 +9,33 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="nomEleve"></h1>
+        <h1 id="nomEleve">Exercices interactifs</h1>
         <a href="index.html">Retour à la liste</a>
-
-        <h2>Exercices interactifs</h2>
-        <div id="exercices">
-            <!-- Les exercices seront générés ici -->
+        
+        <h2>Exercice 1 : Alphabet en désordre (majuscules)</h2>
+        <div id="exercice1" class="tableau"></div>
+        
+        <h2>Exercice 2 : Alphabet en désordre (script)</h2>
+        <div id="exercice2" class="tableau"></div>
+        
+        <h2>Exercice 3 : Alphabet en désordre (cursif)</h2>
+        <div id="exercice3" class="tableau"></div>
+        
+        <h2>Exercice 4 : Compter jusqu'à</h2>
+        <div id="exercice4">
+            <input type="number" id="nombreInput" placeholder="Entrez un nombre">
+            <button id="verifierNombre">Vérifier</button>
+            <p id="resultatNombre"></p>
         </div>
+        
+        <h2>Exercice 5 : Nombres désordonnés (1 à 20)</h2>
+        <div id="exercice5" class="tableau"></div>
+        
+        <h2>Exercice 6 : Objets non alignés</h2>
+        <div id="exercice6" class="objets"></div>
+        
+        <h2>Exercice 7 : Formes géométriques</h2>
+        <div id="exercice7" class="formes"></div>
     </div>
     <script src="exercices.js"></script>
 </body>
