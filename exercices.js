@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     // Exercice 6 : Dénombrement des objets
     const objetsImages = [
-        "image/objets1.jpg",
-        "image/objets2.jpg",
-        "image/objets3.jpg",
-        "image/objets4.jpg",
-        "image/objets5.jpg"
+        "image/objets1.jpeg",
+        "image/objets2.jpeg",
+        "image/objets3.jpeg",
+        "image/objets4.jpeg",
+        "image/objets5.jpeg"
     ];
 
     const exercice6Container = document.getElementById("exercice6");
@@ -79,12 +79,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Exercice 7 : Formes géométriques
     const formesImages = [
-        "image/carre.jpg",
-        "image/rectangle.jpg",
-        "image/triangle.jpg",
-        "image/ovale.jpg",
-        "image/losange.jpg",
-        "image/rond.jpg"
+        "image/carre.jpeg",
+        "image/rectangle.jpeg",
+        "image/triangle.jpeg",
+        "image/ovale.jpeg",
+        "image/losange.jpeg",
+        "image/rond.jpeg"
     ];
 
     const exercice7Container = document.getElementById("exercice7");
