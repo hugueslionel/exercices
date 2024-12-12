@@ -44,3 +44,69 @@ document.addEventListener("DOMContentLoaded", () => {
     // Exercice 5 : Nombres désordonnés (1 à 20)
     createClickableTable("exercice5", shuffle([...nombres]), 20);
 });
+document.addEventListener("DOMContentLoaded", () => {
+    // Exercice 6 : Dénombrement des objets
+    const objetsImages = [
+        "image/objets1.jpg",
+        "image/objets2.jpg",
+        "image/objets3.jpg",
+        "image/objets4.jpg",
+        "image/objets5.jpg"
+    ];
+
+    const exercice6Container = document.getElementById("exercice6");
+    objetsImages.forEach((imageSrc, index) => {
+        const caseDiv = document.createElement("div");
+        caseDiv.classList.add("case-image");
+
+        const img = document.createElement("img");
+        img.src = imageSrc;
+        img.alt = `Image de dénombrement ${index + 1}`;
+        img.classList.add("image-objet");
+
+        const clickZone = document.createElement("div");
+        clickZone.classList.add("click-zone");
+        clickZone.textContent = "✔";
+
+        clickZone.addEventListener("click", () => {
+            clickZone.style.backgroundColor = "green";
+        });
+
+        caseDiv.appendChild(img);
+        caseDiv.appendChild(clickZone);
+        exercice6Container.appendChild(caseDiv);
+    });
+
+    // Exercice 7 : Formes géométriques
+    const formesImages = [
+        "image/carre.jpg",
+        "image/rectangle.jpg",
+        "image/triangle.jpg",
+        "image/ovale.jpg",
+        "image/losange.jpg",
+        "image/rond.jpg"
+    ];
+
+    const exercice7Container = document.getElementById("exercice7");
+    formesImages.forEach((imageSrc, index) => {
+        const caseDiv = document.createElement("div");
+        caseDiv.classList.add("case-image");
+
+        const img = document.createElement("img");
+        img.src = imageSrc;
+        img.alt = `Forme géométrique ${index + 1}`;
+        img.classList.add("image-objet");
+
+        const clickZone = document.createElement("div");
+        clickZone.classList.add("click-zone");
+        clickZone.textContent = "✔";
+
+        clickZone.addEventListener("click", () => {
+            clickZone.style.backgroundColor = "green";
+        });
+
+        caseDiv.appendChild(img);
+        caseDiv.appendChild(clickZone);
+        exercice7Container.appendChild(caseDiv);
+    });
+});
