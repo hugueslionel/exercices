@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const progression = JSON.parse(localStorage.getItem(nomEleve)) || {};
 
-    // **Exercice 1** : Alphabet en majuscules
+    // **Exercice 1 à 4** inclus
+    // (Code précédent pour les exercices 1 à 4, inchangé ici)
+ // **Exercice 1** : Alphabet en majuscules
     const exercice1 = document.getElementById("exercice1");
     const lettresMajuscules = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").sort(() => Math.random() - 0.5);
     const tableau1 = document.createElement("table");
@@ -110,71 +112,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // **Exercice 5 à 7 : Complétez avec un schéma similaire en utilisant des images**.
 });
-document.addEventListener("DOMContentLoaded", () => {
-    // Exercice 6 : Dénombrement des objets
-    const objetsImages = [
-        "images/objets1.jpg",
-        "images/objets2.jpg",
-        "images/objets3.jpg",
-        "images/objets4.jpg",
-        "images/objets5.jpg"
-    ];
+    // **Exercice 5** : 20 premiers nombres désordonnés
+    const exercice5 = document.getElementById("exercice5");
+    const nombres = Array.from({ length: 20 }, (_, i) => i + 1).sort(() => Math.random() - 0.5);
+    const tableau5 = document.createElement("table");
+    const ligne5 = document.createElement("tr");
 
-    const exercice6Container = document.getElementById("exercice6");
-    objetsImages.forEach((imageSrc, index) => {
-        const caseDiv = document.createElement("div");
-        caseDiv.classList.add("case-image");
+    nombres.forEach((nombre, index) => {
+        const caseNombre = document.createElement("td");
+        caseNombre.textContent = nombre;
+        caseNombre.style.backgroundColor = progression.exercice5?.[index] ? "#D0F0C0" : "transparent";
 
-        const img = document.createElement("img");
-        img.src = imageSrc;
-        img.alt = `Image de dénombrement ${index + 1}`;
-        img.classList.add("image-objet");
-
-        const clickZone = document.createElement("div");
-        clickZone.classList.add("click-zone");
-        clickZone.textContent = "✔";
-
-        clickZone.addEventListener("click", () => {
-            clickZone.style.backgroundColor = "green";
+        caseNombre.addEventListener("click", () => {
+            progression.exercice5 = progression.exercice5 || [];
+            progression.exercice5[index] = !progression.exercice5[index];
+            sauvegarderProgression("exercice5", progression.exercice5);
+            caseNombre.style.backgroundColor = progression.exercice5[index] ? "#D0F0C0" : "transparent";
         });
 
-        caseDiv.appendChild(img);
-        caseDiv.appendChild(clickZone);
-        exercice6Container.appendChild(caseDiv);
+        ligne5.appendChild(caseNombre);
     });
 
-    // Exercice 7 : Formes géométriques
-    const formesImages = [
-        "images/carre.jpg",
-        "images/rectangle.jpg",
-        "images/triangle.jpg",
-        "images/ovale.jpg",
-        "images/losange.jpg",
-        "images/rond.jpg"
-    ];
+    tableau5.appendChild(ligne5);
+    exercice5.appendChild(tableau5);
 
-    const exercice7Container = document.getElementById("exercice7");
-    formesImages.forEach((imageSrc, index) => {
-        const caseDiv = document.createElement("div");
-        caseDiv.classList.add("case-image");
+    // **Exercice 6** : Formes géométriques
+    const exercice6 = document.getElementById("exercice6");
+    const formes = ["carre", "rectangle", "triangle", "ovale", "losange", "rond"];
+    const containerFormes = document.createElement("div");
+
+    formes.forEach((forme, index) => {
+        const divForme = document.createElement("div");
+        divForme.classList.add("forme-container");
 
         const img = document.createElement("img");
-        img.src = imageSrc;
-        img.alt = `Forme géométrique ${index + 1}`;
-        img.classList.add("image-objet");
+        img.src = `images/${forme}.jpg`;
+        img.alt = forme;
+        img.classList.add("image-forme");
 
-        const clickZone = document.createElement("div");
-        clickZone.classList.add("click-zone");
-        clickZone.textContent = "✔";
+        const caseForme = document.createElement("div");
+        caseForme.classList.add("case");
+        caseForme.style.backgroundColor = progression.exercice6?.[index] ? "#D0F0C0" : "transparent";
 
-        clickZone.addEventListener("click", () => {
-            clickZone.style.backgroundColor = "green";
+        caseForme.addEventListener("click", () => {
+            progression.exercice6 = progression.exercice6 || [];
+            progression.exercice6[index] = !progression.exercice6[index];
+            sauvegarderProgression("exercice6", progression.exercice6);
+            caseForme.style.backgroundColor = progression.exercice6[index] ? "#D0F0C0" : "transparent";
         });
 
-        caseDiv.appendChild(img);
-        caseDiv.appendChild(clickZone);
-        exercice7Container.appendChild(caseDiv);
+        divForme.appendChild(img);
+        divForme.appendChild(caseForme);
+        containerFormes.appendChild(divForme);
     });
+
+    exercice6.appendChild(containerFormes);
+
+    // **Exercice 7** : Dénombrement des objets
+    const exercice7 = document.getElementById("exercice7");
+    const objets = ["objets1", "objets2", "objets3", "objets4", "objets5"];
+    const containerObjets = document.createElement("div");
+
+    objets.forEach((objet, index) => {
+        const divObjet = document.createElement("div");
+        divObjet.classList.add("objet-container");
+
+        const img = document.createElement("img");
+        img.src = `images/${objet}.jpg`;
+        img.alt = `Image de ${objet}`;
+        img.classList.add("image-objet");
+
+        const caseObjet = document.createElement("div");
+        caseObjet.classList.add("case");
+        caseObjet.style.backgroundColor = progression.exercice7?.[index] ? "#D0F0C0" : "transparent";
+
+        caseObjet.addEventListener("click", () => {
+            progression.exercice7 = progression.exercice7 || [];
+            progression.exercice7[index] = !progression.exercice7[index];
+            sauvegarderProgression("exercice7", progression.exercice7);
+            caseObjet.style.backgroundColor = progression.exercice7[index] ? "#D0F0C0" : "transparent";
+        });
+
+        divObjet.appendChild(img);
+        divObjet.appendChild(caseObjet);
+        containerObjets.appendChild(divObjet);
+    });
+
+    exercice7.appendChild(containerObjets);
 });
 
 
