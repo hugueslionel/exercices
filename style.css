@@ -47,4 +47,45 @@
 .interactive-table td:hover {
     background-color: #f0f0f0;
 }
+/* Conteneur des exercices 6 et 7 */
+.objets, .formes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Conteneurs des images */
+.case-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Images des objets et formes */
+.image-objet {
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Zone cliquable */
+.click-zone {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.click-zone:hover {
+    background-color: #e2e2e2;
+}
+
 
