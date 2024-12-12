@@ -3,16 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des élèves</title>
+    <title>Page Élève</title>
     <link rel="stylesheet" href="style.css">
+    <script src="exercices.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Gestion des élèves</h1>
-        <input type="text" id="eleveInput" placeholder="Nom de l'élève">
-        <button id="ajouterBtn">Ajouter</button>
-        <ul id="listeEleves"></ul>
-    </div>
-    <script src="script.js"></script>
+    <!-- En-tête du site -->
+    <header>
+        <h1>Bienvenue sur la page Élève</h1>
+    </header>
+
+    <!-- Section principale -->
+    <main>
+        <!-- Conteneur pour les exercices 1 à 5 -->
+        <section id="exercices-alphabet">
+            <h2>Exercices sur l'alphabet et les nombres</h2>
+            <div id="exercice1"></div>
+            <div id="exercice2"></div>
+            <div id="exercice3"></div>
+            <div id="exercice4"></div>
+            <div id="exercice5"></div>
+        </section>
+
+        <!-- Conteneur pour les exercices 6 et 7 -->
+        <section id="exercices-images">
+            <h2>Exercices interactifs avec images</h2>
+            
+            <!-- Exercice 6 : Dénombrement des objets -->
+            <h3>Exercice 6 : Dénombrement des objets</h3>
+            <div id="exercice6" class="objets"></div>
+
+            <!-- Exercice 7 : Formes géométriques -->
+            <h3>Exercice 7 : Formes géométriques</h3>
+            <div id="exercice7" class="formes"></div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>Créé avec ❤️ par [Votre Nom]</p>
+    </footer>
 </body>
 </html>
