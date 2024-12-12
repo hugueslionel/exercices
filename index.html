@@ -1,48 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Élève</title>
+    <title>Liste des élèves</title>
     <link rel="stylesheet" href="style.css">
-    <script src="exercices.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- En-tête du site -->
     <header>
-        <h1>Bienvenue sur la page Élève</h1>
+        <h1>Liste des élèves</h1>
     </header>
 
-    <!-- Section principale -->
     <main>
-        <!-- Conteneur pour les exercices 1 à 5 -->
-        <section id="exercices-alphabet">
-            <h2> Connaître les lettres de l'alphabet </h2>
-            <div id="exercice1"></div>
-            <div id="exercice2"></div>
-            <div id="exercice3"></div>
-            <h3> Connaissance des nombres</h3>
-            <div id="exercice4"></div>
-            <div id="exercice5"></div>
+        <section id="gestion-eleves">
+            <input type="text" id="nouvel-eleve" placeholder="Nom de l'élève">
+            <button id="ajouter-eleve">Ajouter</button>
         </section>
 
-        <!-- Conteneur pour les exercices 6 et 7 -->
-        <section id="exercices-images">
-           
-            
-            <!-- Exercice 6 : Dénombrement des objets -->
-            <h4>Exercice 6 : Dénombrement des objets</h4>
-            <div id="exercice6" class="objets"></div>
-
-            <!-- Exercice 7 : Formes géométriques -->
-            <h5>Exercice 7 : Formes géométriques</h5>
-            <div id="exercice7" class="formes"></div>
+        <section id="liste-eleves">
+            <h2>Élèves</h2>
+            <ul id="eleves">
+                <!-- Liste dynamique des élèves -->
+            </ul>
         </section>
     </main>
-
-    <!-- Pied de page -->
-    <footer>
-        <p>Créé avec ❤️ par [Votre Nom]</p>
-    </footer>
 </body>
 </html>
