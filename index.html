@@ -4,25 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des élèves</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Liste des élèves</h1>
-    </header>
-
-    <main>
-        <section id="gestion-eleves">
-            <input type="text" id="nouvel-eleve" placeholder="Nom de l'élève">
-            <button id="ajouter-eleve">Ajouter</button>
-        </section>
-
-        <section id="liste-eleves">
-            <h2>Élèves</h2>
-            <ul id="eleves"></ul>
-        </section>
-    </main>
+    <h1>Liste des élèves</h1>
+    <div id="eleves-container"></div>
+    <input type="text" id="nouvel-eleve" placeholder="Nom de l'élève">
+    <button id="ajouter-eleve">Ajouter</button>
+    <script src="script.js"></script>
 </body>
 </html>
 
