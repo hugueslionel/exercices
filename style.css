@@ -26,7 +26,7 @@ td {
 }
 
 td:hover {
-    background-color: #e0f7fa;
+    background-color: #fffff0;
 }
 .image-forme, .image-objet {
     width: 100px;
@@ -51,5 +51,5 @@ td:hover {
 }
 
 .case:hover {
-    background-color: #e0f7fa;
+    background-color: #fffff0;
 }
