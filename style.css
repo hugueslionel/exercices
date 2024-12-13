@@ -1,55 +1,43 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const elevesContainer = document.getElementById("eleves-container");
+    const nouvelEleveInput = document.getElementById("nouvel-eleve");
+    const ajouterEleveBtn = document.getElementById("ajouter-eleve");
 
-header {
-    background-color: #fffff0;
-    color: white;
-    padding: 6px;
-    text-align: center;
-}
+    const chargerEleves = () => {
+        const eleves = JSON.parse(localStorage.getItem("eleves")) || [];
+        elevesContainer.innerHTML = "";
+        eleves.forEach((eleve, index) => {
+            const eleveDiv = document.createElement("div");
+            eleveDiv.textContent = eleve;
+            eleveDiv.addEventListener("click", () => {
+                window.location.href = `eleve.html?nom=${encodeURIComponent(eleve)}`;
+            });
 
-table {
-    border-collapse: collapse;
-    margin: 10px auto;
-}
+            const supprimerBtn = document.createElement("button");
+            supprimerBtn.textContent = "Supprimer";
+            supprimerBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                eleves.splice(index, 1);
+                localStorage.setItem("eleves", JSON.stringify(eleves));
+                chargerEleves();
+            });
 
-td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-}
+            eleveDiv.appendChild(supprimerBtn);
+            elevesContainer.appendChild(eleveDiv);
+        });
+    };
 
-td:hover {
-    background-color: #fffff0;
-}
-.image-forme, .image-objet {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+    ajouterEleveBtn.addEventListener("click", () => {
+        const nom = nouvelEleveInput.value.trim();
+        if (nom) {
+            const eleves = JSON.parse(localStorage.getItem("eleves")) || [];
+            eleves.push(nom);
+            localStorage.setItem("eleves", JSON.stringify(eleves));
+            nouvelEleveInput.value = "";
+            chargerEleves();
+        }
+    });
 
-.forme-container, .objet-container {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-}
+    chargerEleves();
+});
 
-.case {
-    width: 100px;
-    height: 20px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    background-color: transparent;
-}
-
-.case:hover {
-    background-color: #fffff0;
-}
